@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Q3 Week 3 - dates </title>
+    <meta charset = "UTF-8">
+    <meta name = "author" content = "ORDONA, Victoria Alexandra I.">
+    <meta name = "keywords" content = "Calculate, Birthday, Leap, Year">
+    <meta name = "revised" content = "24-02-2022">
+  </head>
+  <body>
+    <center>
+      <h2> Calculate if My Birthday Is on a Leap Year </h2> <br>
+      
+      <input type = "date" id = "birthDate"> 
+      <button onclick = "calcLeapYear()" id = "input"> Calculate </button>
+    </center>
+
+    <script>
+	
+     function calcLeapYear() {
+
+        let birthDate =  new Date(document.getElementById("birthDate").value);
+        console.log("Date entered: " + birthDate);
+
+        let month = birthDate.getMonth() + 1;
+        switch (month) {
+          case 1:
+          month = "January";
+          break;
+          case 2:
+          month = "February";
+          case 3:
+          month = "March";
+          case 4:
+          month = "April";
+          break;
+          case 5:
+          month = "May";
+          break;
+          case 6:
+          month = "June";
+          break;
+          case 7:
+          month = "July";
+          break;
+          case 8:
+          month = "August";
+          case 9:
+          month = "September";
+          case 10:
+          month = "October";
+          break;
+          case 11:
+          month = "November";
+          break;
+          case 12:
+          month = "December";
+        }
+        console.log("Month: " + month);
+
+        let day = birthDate.getDate();
+        console.log("Day: " + day);
+
+        let year = birthDate.getFullYear();
+        console.log("Year: " + year);
+
+        let bday = month + " " + day + ", " + year;
+        console.log("Birthday: " + bday);
+
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+          document.write("Your birthday, " + bday + ", is on a leap year.")
+          console.log("Leap Year: Yes");
+        }
+        else {
+          document.write("Your birthday, " + bday + ", is not on a leap year.")
+          console.log("Leap Year: No");
+        }
+      }
+
+    </script>
+  </body>
+</html>
